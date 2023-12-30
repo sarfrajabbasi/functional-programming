@@ -102,17 +102,24 @@ Ans:- The ideas behind  functional programming is that it is a style of coding,a
 Q. What a pure function looks like, and what a not pure function looks like?
 --> And keeping in mind that, pure functions have no side effects.
 
+--> In the not pure function, the side effect being if that function is called at a later time when the variable changes,you might have an unexpected output.So the pure function you have an expected output,you're gonna pass it one thing and it's gonna return one thing.
+
 */
 
-// Pure:-
+// Not Pure:-
 let namm = "sarfraj";
 
-function greet() {
+function greet2() {
   console.log(`hello ${namm}`);
 }
 
-greet(); //hello sarfraj
+namm = "mohseen"
+greet2(); //hello sarfraj
 
+
+// pure
 function greet(namm) {
-  console.log(console.log(`hello ${namm}`));
+     console.log(console.log(`hello ${namm}`));
 }
+
+greet('asif');
