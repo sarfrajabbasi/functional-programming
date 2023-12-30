@@ -65,11 +65,10 @@ Ans ==> we will learn about basic principle of the functional programming paradi
 
 // ================= START HERE =================
 
+
+
 /* 
-
 Q. what is functional programming?
-
-
 
 */
 
