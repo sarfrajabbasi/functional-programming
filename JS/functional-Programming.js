@@ -161,9 +161,10 @@ Ans:- When we're doing functional programming,we are concerned with the kind of 
 
 -> So how to become functional programmer.(use pure functions)(GPT:-User so how to become functional programmer give me main thing and guiding principles)
 
-     1. Do everything with functions:-- make your program to functions(impertive programming style to declrative style,what is the input to my functions and outputs),instead of thinking ,how should my program run. do pure functions programming.
+     1. Do everything with functions:-- make your program become a functions instead of thinking again about a program as like an imperative,series of commands.think program as function(what input and ouput to my functions?) and instead of thinking how should my program run,which is pretty 'imperative' question to be asking ourselves.
 
-     2. avoid side-Effects :- thing that we know that we're going to need to do functionalprogramming is to avoid side effects.Only retrun output,do nothing else,only look input nothing else.
+     
+     2. Avoid side-Effects :- thing that we know that we're going to need to do functional programming is to avoid side effects.Only retrun output,do nothing else,only look input nothing else.
 */
 
 // Imperative:
@@ -198,7 +199,7 @@ function renameThisis(newName){
 
 renameThisis('billu barber')
 
-// No- side-effect
+// No-side-effect
 
 function renameThisis2(oldthesis,newName){
      return {
