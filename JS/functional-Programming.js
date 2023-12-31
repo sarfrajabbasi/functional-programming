@@ -111,22 +111,21 @@ let namm = "sarfraj";
 
 function greet2() {
   console.log(`hello ${namm}`);
-//   no return statement means function is doing something other than retruning its value,in this case we are logging and don't care about the return value and we interseting in is logging to the console which changing something in the outside world that is sideEffect.
+  //   no return statement means function is doing something other than retruning its value,in this case we are logging and don't care about the return value and we interseting in is logging to the console which changing something in the outside world that is sideEffect.
 }
 
-namm = "mohseen"
+namm = "mohseen";
 greet2(); //hello sarfraj
-
 
 // Pure
 function greet(namm) {
-     //  a pure function every time you call it with the samearguments in this case,Every time you call it with the same argument,you will get the same result, that is a guarantee.
+  //  a pure function every time you call it with the samearguments in this case,Every time you call it with the same argument,you will get the same result, that is a guarantee.
 
-     // There's a term here called deterministic.So a pure function is deterministic,meaning it's output is totally determined by its inputs.
-    return  `hello ${namm}`;
+  // There's a term here called deterministic.So a pure function is deterministic,meaning it's output is totally determined by its inputs.
+  return `hello ${namm}`;
 }
 
-greet('asif');
+greet("asif");
 
 /* 
 -> Q. A Pure function,if it's not allowed to do anything in the world except return it's output  value,its doesn't really do anything like don't get log output,don't get my profile picture updated on the website.so what gives?How do we do anything in functional programming?
@@ -135,8 +134,80 @@ greet('asif');
 
 Ans:- When we're doing functional programming,we are concerned with the kind of computational aspect of our programs,So What functional programmers do to be able to be productive, and to be able to actually affect the world.Because at the end of the day what we're trying to do when we write programs,is to take all of those side effects.All of those logs, and database transactions, and inputs and outputs from the outside world.And essentially push them to the outside of the program,so that they're kind of the very, very last step in doing any of this.And the inside of the program is all totally pure.
 
--> it means that, anything going on inside of your program,all the logic, all of the business logic.And the computations and the manipulations of data thatare usually the tricky parts of getting those programs right,all of that becomes much more easier to deal with.Because it is more predictable, it's safer,And those impure side effects,we can force out to the outer edges of our program.
+-> it means that, anything going on inside of your program,all the logic, all of the business logic.And the computations and the manipulations of data that are usually the tricky parts of getting those programs right,all of that becomes much more easier to deal with.Because it is more predictable, it's safer,And those impure side effects,we can force out to the outer edges of our program.
 
 -> Because everything inside the program is deterministic,as we said is a great consequence of pure functions.
 
 */
+
+// ========== Why Functional JS =========
+
+/* 
+--> becoz functions are determninistic and we get code that's much more predictable,means that there's also less opportunity for bugs to arise and it's safer and it's more dependable we can say and also this mean it's much easier to test and debug and find places where there are problems,so it's much easier to test our code and to mainain our code and think about the interactions of different parts of program coz they each become kind of these isloated pure deterministic units and how we can build complex programs out of simple & pure functions.
+
+--> function programming have lots of advantages and so especially for writing code,like data transformations.
+
+-> becoz out objective here is to understand our programs better write code that's easier to test to debug make our lives easier as developers.
+->  Object-oriented JavaScript is hard,programming in a functional style in JavaScript,that became so much easier, because again, the functions are predictable.
+->  Great rule of thumb.That each function should do one kind of operation or one kind of computation. 
+
+->important to focus on the purity of the function and the predictability of the function.
+
+*/
+
+//  ===============Side Effect =================
+
+/* 
+
+-> So how to become functional programmer.(use pure functions)(GPT:-User so how to become functional programmer give me main thing and guiding principles)
+
+     1. Do everything with functions:-- make your program to functions(impertive programming style to declrative style,what is the input to my functions and outputs),instead of thinking ,how should my program run. do pure functions programming.
+
+     2. avoid side-Effects :- thing that we know that we're going to need to do functionalprogramming is to avoid side effects.Only retrun output,do nothing else,only look input nothing else.
+*/
+
+// Imperative:
+
+let namee = "conner";
+let greetings = "romi";
+
+console.log(`${greetings} ${namee}`);
+
+greetings = "Howdy";
+console.log(`${greetings} ${namee}`);
+
+// Functional:(pure)
+function greetMe(greetings, namee) {
+  // functional programs are a really great fit for things like againdata transformation where you know what type of thing is coming in
+  return `${greetings} ${namee}`;
+}
+
+greetMe("hello", "sarfraj");
+greetMe("howdy", "conner");
+
+
+// Side Effects:-
+
+const thesis = {name:'bill',date:1993};
+
+function renameThisis(newName){
+     // reading data from outside world
+     thesis.name = newName;
+     console.log('Renamed');
+}
+
+renameThisis('billu barber')
+
+// No- side-effect
+
+function renameThisis2(oldthesis,newName){
+     return {
+          name :newName,date:oldthesis.date
+     }
+
+}
+
+
+const thesis2 =  renameThisis2(thesis,'conner');
+console.log(thesis);
+console.log(thesis2);
