@@ -1,28 +1,27 @@
-/* basic concept of functional programming and core ideas which make us life long functional programmer.
+/*
+Basic concept of functional programming and core ideas which make us life long functional programmer.
 
 Q. What is functional programming and why are people so excited about it?
 
 Q. What does functional code look like? how is different from imperative or OO code?
 
 
-<==== LEARN=====>
+             <==== LEARN =====>
 
-  Q. What will we learn in this course?
+Q. What will we learn in this course?
 
 Ans ==> we will learn about basic principle of the functional programming paradigm,such as:
 
-   --> we gonna talk about pure functions and side-effects why want to avoid them.
-   -->we gonna talk about programms as piplines through which data flows between functions.
-   --> talk about higher order functions,first class functions,closure,currying.our focus is not gonna be on the terminology so much,but those core ideas.
-   --> talk about immutablity and changing data in a way that's functional, that works  with functional programming.
+   --> talk about pure functions and side-effects why want to avoid them.
 
-   {----
--> construct programs from pure, “input in-output out” functions through which data flows.
+   --> talk about programms as piplines through which data flows between functions.
 
--> use higher-order functions like map & filter instead of iterative loops, and closures instead of objects & classes.
+   --> talk about higher order functions,first class functions,closure,currying.our focus in the core ideas.
 
--> avoid mutation (changing things in-place), and use immutable data structures for efficiency
------}
+   --> talk about immutablity and changing data in a way that they works  with functional programming.
+
+
+ ------------------XXXXX------------------
 
 =========== Outline/content for that i learn ===========
 
@@ -68,11 +67,11 @@ Ans ==> we will learn about basic principle of the functional programming paradi
 Q. What is functional programming?
 Ans:- The ideas behind  functional programming is that it is a style of coding,a type of programming that some languages support and maybe some others don't. 
 
- --> learn functional programming also helped  get better at Javascript and make you beccome a more productive JS Developer.
+ --> Learn functional programming also helped  get better at Javascript and make you beccome a more productive JS Developer.
 
- --> one other way to understand functional programming instead of thinking of as style of writing code is as a programming paradigm(mean worldview or mindset or a way of understanding the world).
+ --> One other way to understand functional programming instead of thinking of as style of writing code is as a programming paradigm(mean worldview or mindset or a way of understanding the world).
 
- --> many different types of programming paradigms that softwaredevelopers have developed over the course of computing history.
+ --> Many different types of programming paradigms that software developers have developed over the course of computing history.
 
  --> But there are two really main distinct paradigms,
 
@@ -84,7 +83,7 @@ Ans:- The ideas behind  functional programming is that it is a style of coding,a
 
        --> So the idea with declarative programming is to move away from this command oriented imperative style.And functional programming is one type of a declarative paradigm.
 
-       --> functional programming boils down to a single thing, pure functions." what are they?A pure function is a function like we're used towriting in code.But it's special in that it only takes its input in and that is the only thing, the only data that it looks at about the world,and all that it does is return its output."So we could think about pure functions as only input in and only output out.
+       --> functional programming boils down to a single thing, pure functions." what are they?A pure function is a function like we're used to writing in code.But it's special in that it only takes its input in and that is the only thing, the only data that it looks at about the world,and all that it does is return its output."So we could think about pure functions as only input in and only output out.
 
        --> but what we write function day to day that  similar but it also communicates with the outside world,So it also might be reading things from the outside world to help it make its computation,like what is time is it? Or what profile picture does this user have stored on their profile things like that aren't direct inputs to the function,but the function may be uses to do its computation.
 
@@ -161,10 +160,10 @@ Ans:- When we're doing functional programming,we are concerned with the kind of 
 
 -> So how to become functional programmer.(use pure functions)(GPT:-User so how to become functional programmer give me main thing and guiding principles)
 
-     1. Do everything with functions:-- make your program become a functions instead of thinking again about a program as like an imperative,series of commands.think program as function(what input and ouput to my functions?) and instead of thinking how should my program run,which is pretty 'imperative' question to be asking ourselves.
+     1. Do everything with functions:-- make your program become a functions instead of thinking again about a program as like an imperative,0series of commands.think program as function(what input and ouput to my functions?) and instead of thinking how should my program run,which is pretty 'imperative' question to be asking ourselves.What should my program take in.And what should my program, return out.
 
-     
-     2. Avoid side-Effects :- thing that we know that we're going to need to do functional programming is to avoid side effects.Only retrun output,do nothing else,only look input nothing else.
+
+     2. Avoid side effects:- In functional programming is to avoid side effects,only return output do nothing else,and look at input nothing else.
 */
 
 // Imperative:
@@ -179,36 +178,75 @@ console.log(`${greetings} ${namee}`);
 
 // Functional:(pure)
 function greetMe(greetings, namee) {
-  // functional programs are a really great fit for things like againdata transformation where you know what type of thing is coming in
+  // functional programs are a really great fit for things like again data transformation where you know what type of thing is coming in,what thing you want to come out.
   return `${greetings} ${namee}`;
 }
 
 greetMe("hello", "sarfraj");
 greetMe("howdy", "conner");
 
-
 // Side Effects:-
 
-const thesis = {name:'bill',date:1993};
+const thesis = { name: "bill", date: 1993 };
 
-function renameThisis(newName){
-     // reading data from outside world
-     thesis.name = newName;
-     console.log('Renamed');
+function renameThisis(newName) {
+  // reading data from outside world
+  thesis.name = newName;
+  console.log("Renamed");
 }
 
-renameThisis('billu barber')
+renameThisis("billu barber");
 
 // No-side-effect
 
-function renameThisis2(oldthesis,newName){
-     return {
-          name :newName,date:oldthesis.date
-     }
+function renameThisis2(oldthesis, newName) {
+  // instead of updating global thesis object,we create new object.
+  // In functional programming we are not update original thing, we take original thing and make new slightly different copy and return out.
+  // not data changing bu take some data  and returning new data based on the original data.(data tranformation)
+  return {
+    name: newName,
+    date: oldthesis.date,
+  };
+}
+
+const thesis2 = renameThisis2(thesis, "conner");
+console.log(thesis);
+console.log(thesis2);
+
+// Important:--
+//The trick with functional programming is to make sure that you'renot changing anything about the outside world andthat whatever that you're returning back is a new thing,a new object instead of that old object that you wanted to update.
+
+// ======= Pure function exercise =========
+
+/* 
+
+#  A pure function has two characteristics:
+
+-> No Side Effects: A pure function has no effect on the program or the world besides outputting its return value
+
+-> Deterministic: Given the same input values, a pure function will always return the same output. This is because its return value depends only on its input parameters, and not on any other information (e.g. global program state) 
+
+*/
+
+// not pure
+function getDate() {
+  return new Date().toDateString();
+}
+
+getDate();
+
+// pure
+function getWorkShopDate() {
+  return new Date(2020, 11, 4).toDateString();
+}
+
+getWorkShopDate()
+
+function toHex(n){
+     let hex = n.toString(16);
+     return hex.padstart(2,"0");
 
 }
 
+toHex(8)
 
-const thesis2 =  renameThisis2(thesis,'conner');
-console.log(thesis);
-console.log(thesis2);
