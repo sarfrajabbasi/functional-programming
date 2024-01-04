@@ -63,7 +63,9 @@ Ans ==> we will learn about basic principle of the functional programming paradi
 /* 
 Q. What is functional programming and why are people so excited about it?
 
-Ans:- The ideas behind the functional programming is that it is a style of coding,a type of programming that some languages support and maybe some others don't. 
+Ans:- The ideas behind the functional programming is that it is a style of coding,a type of programming that some languages support and maybe some others don't.
+
+   # Examples:-- Haskell,F#,Erlang,Clojure,Elm,Scala,OCaml.
 
    # help
  --> Learn functional programming also helped  get better at Javascript and make you beccome a more productive JS Developer.
