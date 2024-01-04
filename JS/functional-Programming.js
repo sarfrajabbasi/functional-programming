@@ -1,5 +1,5 @@
 /*
-Basic concept of functional programming and core ideas which make us life long functional programmer.
+Basic concept of functional programming and core ideas that make us life long functional programmer.
 
 
              <==== LEARN =====>
@@ -63,13 +63,19 @@ Ans ==> we will learn about basic principle of the functional programming paradi
 /* 
 Q. What is functional programming and why are people so excited about it?
 
-Ans:- The ideas behind  functional programming is that it is a style of coding,a type of programming that some languages support and maybe some others don't. 
+Ans:- The ideas behind the functional programming is that it is a style of coding,a type of programming that some languages support and maybe some others don't. 
 
+   # help
  --> Learn functional programming also helped  get better at Javascript and make you beccome a more productive JS Developer.
 
+   # other way to understand
  --> One other way to understand functional programming instead of thinking of as style of writing code is as a programming paradigm(mean worldview or mindset or a way of understanding the world).
 
+   # different types of programming paradigms
  --> Many different types of programming paradigms that software developers have developed over the course of computing history.But there are two really main distinct paradigms:--
+
+
+   # functional programming Vs imperative or OO programming
 
  Q. What does functional code look like? how is different from imperative or OO code?
 
