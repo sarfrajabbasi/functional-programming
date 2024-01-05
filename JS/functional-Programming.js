@@ -69,7 +69,7 @@ Ans:- The ideas behind the functional programming is that it is a style of codin
    # help
  --> Learn functional programming also helped  get better at Javascript and make you beccome a more productive JS Developer.
 
-   # other way to understand
+   # other way to understand F.P;
  --> One other way to understand functional programming instead of thinking of as style of writing code is as a programming paradigm(mean worldview or mindset or a way of understanding the world).
 
    # different types of programming paradigms
@@ -82,13 +82,14 @@ Ans:- The ideas behind the functional programming is that it is a style of codin
 
        1. Non-functional side(imperative programming:- think of imperative programming as understanding the world of computing as a series of commands/Where programs are a series of instructions).
 
-       --> And one kind of sub paradigm of the imperative mindset is object-oriented programming and in object-oriented programming, we use concepts like encapsulation,where we have objects that keep internal values to themselves,and they can change those values that we call state.
+       --> And one kind of sub paradigm of the imperative mindset is object-oriented programming and in object-oriented programming, we use concepts like encapsulation,where we have objects that keep internal values to themselves,and they can change those values that we call state
+       and also they can talk to each other thorugh messages that they pass(call methods on other objects in the program)
 
-       2. Declarative programming:- we declare,what i would like from you computer And we let the computer or the program figure out how it's going to do that computation or how it's going to get it to us.
+       2. Declarative programming (world view):- we declare,what i would like from you computer And we let the computer or the program figure out how it's going to do that computation or how it's going to get it to us(let the implementation to figure it out)
 
        --> So the idea with declarative programming is to move away from this command oriented imperative style And functional programming is one type of a declarative paradigm.
 
-       --> functional programming boils down to a single thing, pure functions." what are they?A pure function is a function like we're used to writing in code.But it's special in that it only takes its input in and that is the only thing, the only data that it looks at about the world,and all that it does is return its output."So we could think about pure functions as only input in and only output out.
+       --> functional programming boils down to a single thing or idea, pure functions." what are they?  A pure function is a function like we're used to writing in code.But it's special in that it only takes its input in and that is the only thing, the only data that it looks at about the world,and all that it does is return its output."So we could think about pure functions as only input in and only output out.
 
        --> but what we write function day to day that  similar but it also communicates with the outside world,So it also might be reading things from the outside world to help it make its computation,like what is time is it? Or what profile picture does this user have stored on their profile things like that aren't direct inputs to the function,but the function may be uses to do its computation.
 
