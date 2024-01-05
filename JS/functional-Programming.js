@@ -1,7 +1,6 @@
 /*
 Basic concept of functional programming and core ideas that make us life long functional programmer.
 
-
              <==== LEARN =====>
 
 Q. What will we learn in this course?
