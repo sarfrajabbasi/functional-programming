@@ -89,7 +89,9 @@ Ans:- The ideas behind the functional programming is that it is a style of codin
 
        --> So the idea with declarative programming is to move away from this command oriented imperative style And functional programming is one type of a declarative paradigm.
 
-       --> functional programming boils down to a single thing or idea, pure functions." what are they?  A pure function is a function like we're used to writing in code.But it's special in that it only takes its input in and that is the only thing, the only data that it looks at about the world,and all that it does is return its output."So we could think about pure functions as only input in and only output out.
+       # Pure Functions:----
+
+       --> Functional Programming boils down to a single thing or idea, pure functions." what are they?  A pure function is a function like we're used to writing in code.But it's special in that it only takes its input in and that is the only thing, the only data that it looks at about the world,and all that it does is return its output."So we could think about pure functions as only input in and only output out.
 
        --> but what we write function day to day that  similar but it also communicates with the outside world,So it also might be reading things from the outside world to help it make its computation,like what is time is it? Or what profile picture does this user have stored on their profile things like that aren't direct inputs to the function,but the function may be uses to do its computation.
 
@@ -166,7 +168,7 @@ Ans:- When we're doing functional programming,we are concerned with the kind of 
 
 -> So how to become functional programmer.(use pure functions)(GPT:-User so how to become functional programmer give me main thing and guiding principles)
 
-     1. Do everything with functions:-- make your program become a functions instead of thinking again about a program as like an imperative,0series of commands.think program as function(what input and ouput to my functions?) and instead of thinking how should my program run,which is pretty 'imperative' question to be asking ourselves.What should my program take in.And what should my program, return out.
+     1. Do everything with functions:-- make your program become a functions instead of thinking again about a program as like an imperative,series of commands.think program as function(what input and ouput to my functions?) and instead of thinking how should my program run,which is pretty 'imperative' question to be asking ourselves.What should my program take in.And what should my program, return out.
 
 
      2. Avoid side effects:- In functional programming is to avoid side effects,only return output do nothing else,and look at input nothing else.
