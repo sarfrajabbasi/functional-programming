@@ -5,7 +5,7 @@ let namm = "sarfraj";
 
 function greet2() {
   console.log(`hello ${namm}`);
-  //   no return statement means function is doing something other than retruning its value,in this case we are logging and don't care about the return value and we interseting in is logging to the console which changing something in the outside world that is side Effect.
+  // No return statement means function is doing something other than retruning its value,in this case we are logging and don't care about the return value and we interseting in is logging to the console which changing something in the outside world that is side Effect.
 }
 
 namm = "mohseen";
@@ -21,16 +21,10 @@ function greet(namm) {
 
 greet("asif");
 
-//  ===============Side Effect =================
+//  =============== Side Effect =================
 
 /* 
-
 -> So how to become functional programmer.(use pure functions)(GPT:-User so how to become functional programmer give me main thing and guiding principles)
-
-     1. Do everything with functions:-- make your program become a functions instead of thinking again about a program as like an imperative,series of commands.think program as function(what input and ouput to my functions?) and instead of thinking how should my program run,which is pretty 'imperative' question to be asking ourselves.What should my program take in.And what should my program, return out.
-
-
-     2. Avoid side effects:- In functional programming is to avoid side effects,only return output do nothing else,and look at input nothing else.
 */
 
 // Imperative:
@@ -64,12 +58,12 @@ function renameThisis(newName) {
 
 renameThisis("billu barber");
 
-// No-side-effect
+// No-Side-Effect
 
 function renameThisis2(oldthesis, newName) {
-  // instead of updating global thesis object,we create new object.
+  // Instead of updating global thesis object,we create new object.
   // In functional programming we are not update original thing, we take original thing and make new slightly different copy and return out.
-  // not data changing bu take some data  and returning new data based on the original data.(data tranformation)
+  // Not data changing bu take some data  and returning new data based on the original data.(data tranformation)
   return {
     name: newName,
     date: oldthesis.date,
@@ -81,7 +75,8 @@ console.log(thesis);
 console.log(thesis2);
 
 // Important:--
-//The trick with functional programming is to make sure that you'renot changing anything about the outside world andthat whatever that you're returning back is a new thing,a new object instead of that old object that you wanted to update.
+
+// The trick with functional programming is to make sure that you'renot changing anything about the outside world andthat whatever that you're returning back is a new thing,a new object instead of that old object that you wanted to update.
 
 // ======= Pure function exercise =========
 
@@ -95,25 +90,23 @@ console.log(thesis2);
 
 */
 
-// not pure
+// Not Pure
 function getDate() {
   return new Date().toDateString();
 }
 
 getDate();
 
-// pure
+// Pure
 function getWorkShopDate() {
   return new Date(2020, 11, 4).toDateString();
 }
 
-getWorkShopDate()
+getWorkShopDate();
 
-function toHex(n){
-     let hex = n.toString(16);
-     return hex.padstart(2,"0");
-
+function toHex(n) {
+  let hex = n.toString(16);
+  return hex.padstart(2, "0");
 }
 
-toHex(8)
-
+toHex(8);
