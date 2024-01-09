@@ -9,7 +9,7 @@ function greet2() {
 }
 
 namm = "mohseen";
-greet2(); //hello sarfraj
+// greet2(); //hello sarfraj
 
 // Pure
 function greet(namm) {
@@ -32,10 +32,10 @@ greet("asif");
 let namee = "conner";
 let greetings = "romi";
 
-console.log(`${greetings} ${namee}`);
+// console.log(`${greetings} ${namee}`);
 
 greetings = "Howdy";
-console.log(`${greetings} ${namee}`);
+// console.log(`${greetings} ${namee}`);
 
 // Functional:(pure)
 function greetMe(greetings, namee) {
@@ -56,14 +56,14 @@ function renameThisis(newName) {
   console.log("Renamed");
 }
 
-renameThisis("billu barber");
+// renameThisis("billu barber");
 
 // No-Side-Effect
 
 function renameThisis2(oldthesis, newName) {
   // Instead of updating global thesis object,we create new object.
   // In functional programming we are not update original thing, we take original thing and make new slightly different copy and return out.
-  // Not data changing bu take some data  and returning new data based on the original data.(data tranformation)
+  // Not data changing but take some data  and returning new data based on the original data.(data tranformation)
   return {
     name: newName,
     date: oldthesis.date,
@@ -71,12 +71,14 @@ function renameThisis2(oldthesis, newName) {
 }
 
 const thesis2 = renameThisis2(thesis, "conner");
-console.log(thesis);
-console.log(thesis2);
+// console.log(thesis);
+// console.log(thesis2);
 
 // Important:--
 
-// The trick with functional programming is to make sure that you'renot changing anything about the outside world andthat whatever that you're returning back is a new thing,a new object instead of that old object that you wanted to update.
+// The trick with functional programming is to make sure that you're not changing anything about the outside world and that whatever that you're returning back is a new thing,a new object instead of that old object that youa wanted to update.
+
+
 
 // ======= Pure function exercise =========
 
@@ -105,8 +107,70 @@ function getWorkShopDate() {
 getWorkShopDate();
 
 function toHex(n) {
+  // pure
   let hex = n.toString(16);
-  return hex.padstart(2, "0");
+  return hex.padStart(2, "0");
 }
 
 toHex(8);
+
+function rgbToHex(R,G,B){
+  // pure
+  return "#" + [toHex(R),toHex(G),toHex(B)].join("");
+}
+const rgb_to_hex = rgbToHex(223,45,124)
+
+// console.log(rgb_to_hex);
+
+function setColor(R,G,B){
+
+  const hex = rgbToHex(R,G,B);
+  // not pure
+  const colorMe = document.getElementById('color-me');
+
+  colorMe.setAttribute('style','color:' + hex )
+}
+
+const set_color = setColor(233,146,134);
+// console.log(set_color);
+
+async function readJsonFile(filename) {
+  // not pure
+  const file = await fetch(
+    'https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_hour.geojson'
+  );
+  return await file.json();
+}
+
+
+function writeJsonString(object) {
+  // pure
+  return JSON.stringify(object, null, 2);
+}
+
+function exclusiveOr(A, B) {
+  // pure
+  return (A || B) && !(A && B);
+}
+
+function computeTruthTable(operator) {
+  // pure
+  const truthValues = [true, false];
+  const table = [];
+  for (const A of truthValues) {
+    for (const B of truthValues) {
+      const value = operator(A, B);
+      table.push({ A, B, value });
+    }
+  }
+  return table;
+}
+
+function showTruthTable(operator) {
+  console.table(computeTruthTable(operator));
+}
+
+// showTruthTable(exclusiveOr);
+
+
+
