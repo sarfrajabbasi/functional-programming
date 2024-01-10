@@ -40,7 +40,7 @@ function iterativeFactorial(n) {
   }
 
 function recursiveFactorial(n){
-    if(n <= 0){
+    if(n === 0){
         return 1
     }
     return n * recursiveFactorial(n-1)
