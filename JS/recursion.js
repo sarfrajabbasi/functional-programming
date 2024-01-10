@@ -2,15 +2,6 @@
 // Condense the main points or key information from a text into a shorter version.
 // Extractive summarization methods select important sentences, while abstractive methods generate new sentences to convey the core information.
 
-function iterativeFactorial(n) {
-  let product = 1;
-
-  while (n > 0) {
-    product *= n;
-    n--;
-  }
-  return product;
-}
 
 // sum
 
@@ -27,6 +18,7 @@ function sum(numbers){
 // recursive
 function sum(numbers) {
   if (numbers.length === 1) {
+    return numbers[0]
     // base case
   }else{
     // recursive case
@@ -35,3 +27,27 @@ function sum(numbers) {
 }
 
 
+// factorial
+
+function iterativeFactorial(n) {
+    let product = 1;
+  
+    while (n > 0) {
+      product *= n;
+      n--;
+    }
+    return product;
+  }
+
+function recursiveFactorial(n){
+    if(n <= 0){
+        return 1
+    }
+    return n * recursiveFactorial(n-1)
+}
+  
+
+const factorial = iterativeFactorial(7)
+const factorial1 = recursiveFactorial(7)
+console.log(factorial);
+console.log(factorial1);
