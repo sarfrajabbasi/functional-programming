@@ -134,6 +134,7 @@ function setColor(R,G,B){
 const set_color = setColor(233,146,134);
 // console.log(set_color);
 
+// Note:- all asynchronous operations in JavaScript is impure.Because we need to wait for those promises to resolve.
 async function readJsonFile(filename) {
   // not pure
   const file = await fetch(
@@ -142,7 +143,7 @@ async function readJsonFile(filename) {
   return await file.json();
 }
 
-
+// note:- so if the object is a regular JavaScript object or regular JavaScript array, both of those are mutable types of data.
 function writeJsonString(object) {
   // pure
   return JSON.stringify(object, null, 2);
