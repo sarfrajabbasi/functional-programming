@@ -56,7 +56,7 @@ function iterativeFibonacci(n) {
   let b = 1;
   let c = 0;
   let nth_arr = [];
-  for (let i = 0; i < n; i++) {
+  for (let i = 0; i <= n; i++) {
     nth_arr.push(a);
     c = a + b;
     a = b;
@@ -73,7 +73,7 @@ function recursiveFibonacci(n) {
   }
 }
 
-const nth_Number = iterativeFibonacci(10);
+const nth_Number = iterativeFibonacci(20);
 const nth_Number2 = recursiveFibonacci(10);
 console.log(nth_Number);
 console.log(nth_Number2);
