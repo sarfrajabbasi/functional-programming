@@ -11,3 +11,6 @@ function iterativeFactorial(n) {
   }
   return product;
 }
+
+// sum
+
