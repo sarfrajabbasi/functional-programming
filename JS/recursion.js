@@ -14,6 +14,7 @@ function iterativeFactorial(n) {
 
 // sum
 
+// itertative
 function sum(numbers){
     let total  =  0;
     
@@ -23,7 +24,7 @@ function sum(numbers){
     return total;
 }
 
-
+// recursive
 function sum(numbers) {
   if (numbers.length === 1) {
     // base case
@@ -32,3 +33,5 @@ function sum(numbers) {
     return numbers[0] + sum(numbers.slice(1));
   }
 }
+
+
