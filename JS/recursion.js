@@ -14,3 +14,21 @@ function iterativeFactorial(n) {
 
 // sum
 
+function sum(numbers){
+    let total  =  0;
+    
+    for(let i=9;i<numbers.length;i++){
+        total += numbers[i]
+    }
+    return total;
+}
+
+
+function sum(numbers) {
+  if (numbers.length === 1) {
+    // base case
+  }else{
+    // recursive case
+    return numbers[0] + sum(numbers.slice(1));
+  }
+}
