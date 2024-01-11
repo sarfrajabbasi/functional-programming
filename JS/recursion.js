@@ -58,15 +58,14 @@ function iterativeFibonacci(n) {
   if (n === 1) {
     return 1;
   }
-  let a = 0;
-  let b = 1;
-  let c = 0;
+  let previous = 0;
+  let current = 1;
   let nth_arr = [];
   for (let i = 0; i <= n; i++) {
-    nth_arr.push(a);
-    c = a + b;
-    a = b;
-    b = c;
+    nth_arr.push(previous);
+    let next = previous + current;
+    previous = current;
+    current = next;
   }
   return nth_arr;
 }
@@ -80,6 +79,6 @@ function recursiveFibonacci(n) {
 }
 
 const nth_Number = iterativeFibonacci(20);
-const nth_Number2 = recursiveFibonacci(10);
+const nth_Number2 = recursiveFibonacci(20);
 console.log(nth_Number);
 console.log(nth_Number2);
