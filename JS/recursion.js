@@ -78,7 +78,18 @@ function recursiveFibonacci(n) {
   }
 }
 
-const nth_Number = iterativeFibonacci(20);
-const nth_Number2 = recursiveFibonacci(20);
-console.log(nth_Number);
+// tail call optimization
+
+function recursiveFibonacci2(n, a = 0, b = 1,array1=[]) {
+  if (n === 0) {
+    array1.push(a)
+    return array1;
+  }
+  array1.push(a)
+  return recursiveFibonacci2(n - 1,b, a + b,array1);
+}
+const nth_Number2 = recursiveFibonacci(10);
 console.log(nth_Number2);
+
+const nth_Num2 = recursiveFibonacci2(56);
+console.log(nth_Num2[nth_Num2.length-1]);
