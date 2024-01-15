@@ -80,13 +80,12 @@ function recursiveFibonacci(n) {
 
 // tail call optimization
 
-function recursiveFibonacci2(n, a = 0, b = 1,array1=[]) {
+function recursiveFibonacci2(n, a = 0, b = 1, array1 = []) {
   if (n === 0) {
-    array1.push(a)
     return array1;
   }
-  array1.push(a)
-  return recursiveFibonacci2(n - 1,b, a + b,array1);
+  array1.push(a);
+  return recursiveFibonacci2(n - 1, b, a + b, array1);
 }
 const nth_Number2 = recursiveFibonacci(10);
 console.log(nth_Number2);
@@ -94,3 +93,29 @@ console.log(nth_Number2);
 const nth_Num2 = recursiveFibonacci2(100);
 console.log(nth_Num2);
 
+function recursivefilter(arr, condition, index = 0, result = []) {
+  if(index >= arr.length){
+    return result
+  }
+
+  if(condition(arr[index])){
+    result.push(arr[index])
+  }
+
+  return recursivefilter(arr,condition,index+1,result);
+
+}
+
+
+ function numArr(nums,i=1,newArr=[]){
+  if(i > nums){
+    return newArr
+  }
+  newArr.push(i)
+  return numArr(nums,i+1,newArr);
+ }
+
+ const nums= numArr(100);
+ const nums2= numArr(1000);
+ console.log(nums);
+ console.log(nums2);
