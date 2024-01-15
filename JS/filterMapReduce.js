@@ -126,4 +126,10 @@ const fizzBuzz = arrMaps((n) => {
   return fizzed || buzzed ? fizzed + buzzed : n;
 }, wholes);
 
-console.log(fizzBuzz);
+// console.log(fizzBuzz);
+
+
+
+
+// Reduce
+
