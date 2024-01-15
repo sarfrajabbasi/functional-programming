@@ -92,18 +92,38 @@ function isPrime(n) {
 
   // filter out nums greater than 1 and less than n
   const possibleFactors = filterArr((m) => m > 1 && m < n, wholes);
-  // log the possible factors 
-//   console.log(possibleFactors);
+  // log the possible factors
+  // console.log(possibleFactors);
   // filter out factors of n from the possible factors
-  const factors = filterArr((m) => n % m === 0,possibleFactors);
+  const factors = filterArr((m) => n % m === 0, possibleFactors);
   // if there are no factors,then n is prime number; otherwise,it's not
-  return (ArrLength(factors)===0)? true :false;
-  
+  return ArrLength(factors) === 0 ? true : false;
 }
 
-const primeNumbers = filterArr(isPrime,wholes);
+const primeNumbers = filterArr(isPrime, wholes);
 
 console.log(primeNumbers);
 
+// Maps:---
 
-// maps:---
+function arrMaps(fn, arr) {
+  if (ArrLength(arr) === 0) return [];
+
+  return [fn(head(arr))].concat(arrMaps(fn, tail(arr)));
+}
+
+// multiply
+const doubled = arrMaps((n) => n * 2, wholes);
+
+// divide
+const halved = arrMaps((n) => n / 2, wholes);
+
+// mapping fizz and buzz
+console.log(wholes);
+const fizzBuzz = arrMaps((n) => {
+  const fizzed = n % 3 === 0 ? "Fizz" : "";
+  const buzzed = n % 5 === 0 ? "Buzz" : "";
+  return fizzed || buzzed ? fizzed + buzzed : n;
+}, wholes);
+
+console.log(fizzBuzz);
