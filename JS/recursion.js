@@ -91,31 +91,29 @@ const nth_Number2 = recursiveFibonacci(10);
 console.log(nth_Number2);
 
 const nth_Num2 = recursiveFibonacci2(100);
-console.log(nth_Num2);
 
 function recursivefilter(arr, condition, index = 0, result = []) {
-  if(index >= arr.length){
-    return result
+  if (index >= arr.length) {
+    return result;
   }
 
-  if(condition(arr[index])){
-    result.push(arr[index])
+  if (condition(arr[index])) {
+    result.push(arr[index]);
   }
 
-  return recursivefilter(arr,condition,index+1,result);
-
+  return recursivefilter(arr, condition, index + 1, result);
 }
 
-
- function numArr(nums,i=1,newArr=[]){
-  if(i > nums){
-    return newArr
+function numArr(nums, i = 1, newArr = []) {
+  if (i > nums) {
+    return newArr;
   }
-  newArr.push(i)
-  return numArr(nums,i+1,newArr);
- }
+  newArr.push(i);
+  return numArr(nums, i + 1, newArr);
+}
 
- const nums= numArr(100);
- const nums2= numArr(1000);
- console.log(nums);
- console.log(nums2);
+const nums = numArr(100);
+
+evenNumbers = recursivefilter(nums, (num) => num % 2 !== 0);
+
+console.log(evenNumbers);
