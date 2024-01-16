@@ -128,9 +128,35 @@ const fizzBuzz = arrMaps((n) => {
 
 // console.log(fizzBuzz);
 
-
 // Reduce
 
-function reduceMe(){
+function reduceMe(reduceFn, initialValue, array) {
+  // check if array is not empty base case
+  if (ArrLength(array) === 0) return initialValue;
 
+  // use head function to get first element of the array and apply reduce function to initialValue and head element and store in newInitialValue
+  const newInitialValue = reduceFn(initialValue, head(array));
+
+  // now recurisve call to reduceMe with the updated newInitialValue and rest of the array tail(array)
+  return reduceMe(reduceFn, newInitialValue, tail(array));
 }
+
+function customReduce(array,callback,initialValue){
+// check if the array is not empty base case
+if(ArrLength(array)===0)return initialValue;
+
+// get the first element of the array and apply callback function to initialValue and head Element and store into accumulator
+const accumuator = callback(initialValue,head(array));
+// now recursive call to customRduce with accumuator and rest of the tail array.
+
+return customReduce(tail(array),callback,accumuator)
+}
+
+const sumOfArr = reduceMe((acc,val)=> acc+val,0,wholes);
+const sumOfArr2 = customReduce(wholes,(acc,val)=>acc+val,0);
+console.log(sumOfArr);
+console.log(sumOfArr2);
+const maxValue = reduceMe((acc,val)=> acc > val ? acc:val,0,wholes);
+const maxValue2 = customReduce(wholes,(acc,val)=> acc > val ? acc:val,0);
+console.log(maxValue);
+console.log(maxValue2);
