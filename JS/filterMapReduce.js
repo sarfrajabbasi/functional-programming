@@ -129,7 +129,8 @@ const fizzBuzz = arrMaps((n) => {
 // console.log(fizzBuzz);
 
 
-
-
 // Reduce
 
+function reduceMe(){
+
+}
