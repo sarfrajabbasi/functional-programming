@@ -93,4 +93,10 @@ function makeSignature(salutation,name){
   return message => writeMessage(message,salutation,name)
 }
 
-writeLoveLetter = writeLoveLetter = makeSignature("Thine evermore", "William")
+const writeLoveLetter = makeSignature("Thine evermore", "William");
+
+const message4 = writeLoveLetter(
+  "Shall I compare thee to a summer's day? Thou art more lovely and more temperate."
+);
+
+console.log(message4);
