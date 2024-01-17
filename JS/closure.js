@@ -8,8 +8,6 @@ function makeAdjactifier(adjective) {
 
 const coolify = makeAdjactifier("cool");
 
-console.log(coolify("workshop"));
-console.log(coolify("drink"));
 
 // currying:-
 
@@ -24,13 +22,6 @@ function curryGreet(greeting) {
 }
 
 const greetItal = curryGreet("hello");
-console.log(greetItal("sarfraj"));
-console.log(greetItal("asif"));
-console.log(greetItal("meme"));
-console.log(greetItal("ibola"));
-console.log(greetItal("corona"));
-console.log(greetItal("black death"));
-console.log(greetItal("bird flu"));
 
 // function customFlat(arr,result=[]){
 //     arr.forEach((element)=>{
@@ -52,9 +43,6 @@ console.log(greetItal("bird flu"));
 // }
 
 // const nestedArray = createNestedArray(10, [12,3,[1,2,3],[12,3,4,4,[1,2,3,[6,5,4]]]]);
-// console.log(nestedArray);
-// console.log(customFlat([12,3,[1,2,3],[12,3,4,4,[1,2,3,[6,5,4]]]]));
-// console.log(customFlat(nestedArray));
 
 // Partial Application & Currying:--
 
@@ -70,7 +58,6 @@ const message1 = writeMessage(
   "Functional Pungrammer"
 );
 
-console.log(message1);
 
 function signMessageFrom(name) {
   return (message, salutation) => writeMessage(message, salutation, name);
@@ -80,7 +67,6 @@ const writeFriendlyNote = signMessageFrom("Your best bud");
 
 const message2 = writeFriendlyNote("Hey pal! Party at my place tonight, bring snacks!", "See ya");
 
-console.log(message2);
 
 
 function signMessageWith(message,name){
@@ -101,12 +87,11 @@ const message4 = writeLoveLetter(
   "Shall I compare thee to a summer's day? Thou art more lovely and more temperate."
 );
 
-console.log(message4);
 
 // currying Excercise:
 
 function quote(name,year,text){
-   return md`<p style="font-size:smaller;padding:1em;font-family:monospace;">"${text}"<br>- ${name} (${year})</p>`;
+   return `<p style="font-size:smaller;padding:1em;font-family:monospace;">"${text}"<br>- ${name} (${year})</p>`;
 }
 
 // currying
@@ -119,8 +104,7 @@ const quoteDijkstra = curriedQuote('Edsger Dijkstra')
 
 const quoteDijkstra75 = quoteDijkstra(1975)
 
-
-stillGrumpyQuotes = html`${[
+const arr = [
   curriedQuote('Guido van Rossum')(2001)(
     "Don't you hate code that's not properly indented?"
   ),
@@ -146,4 +130,19 @@ stillGrumpyQuotes = html`${[
   quoteDijkstra75(
     "The irony of my self-contradiction is lost on me. [Just kidding, he didn't actually say this one - making it all the more true!]"
   )
-]}`
+];
+
+const messageArr = [message1,message2,message3,message4];
+
+messageArr.forEach(e=>{
+  const message = document.querySelector('.message')
+  message.innerHTML += e
+})
+
+
+arr.forEach(e=>{
+  const message = document.querySelector('.message')
+  message.innerHTML += e
+})
+
+
