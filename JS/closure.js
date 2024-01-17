@@ -58,6 +58,8 @@ console.log(greetItal("bird flu"));
 
 // Partial Application & Currying:--
 
+
+// closure Excercise:-
 function writeMessage(message, salutation, name) {
   return `<p style="padding:3em;font-family:monospace">${message}<br><br>${salutation},<br>${name}</p>`;
 }
@@ -100,3 +102,39 @@ const message4 = writeLoveLetter(
 );
 
 console.log(message4);
+
+// currying Excercise:
+
+function quote(name,year,text){
+   return md`<p style="font-size:smaller;padding:1em;font-family:monospace;">"${text}"<br>- ${name} (${year})</p>`;
+}
+
+
+
+stillGrumpyQuotes = html`${[
+  curriedQuote('Guido van Rossum')(2001)(
+    "Don't you hate code that's not properly indented?"
+  ),
+
+  quoteCrockford(2005)('There are no good texts on JavaScript programming.'),
+
+  quoteCrockford(2008)(
+    'JavaScript is an astonishing language, in the very worst sense.'
+  ),
+
+  quoteDijkstra(1978)(
+    'Object oriented programming is an exceptionally bad idea which could only have originated in California.'
+  ),
+
+  quoteDijkstra75(
+    'By claiming that they can contribute to software engineering, the soft scientists make themselves even more ridiculous.'
+  ),
+
+  quoteDijkstra75(
+    "Besides a mathematical inclination, an exceptionally good mastery of one's native tongue is the most vital asset of a competent programmer."
+  ),
+
+  quoteDijkstra75(
+    "The irony of my self-contradiction is lost on me. [Just kidding, he didn't actually say this one - making it all the more true!]"
+  )
+]}`
