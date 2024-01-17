@@ -109,6 +109,15 @@ function quote(name,year,text){
    return md`<p style="font-size:smaller;padding:1em;font-family:monospace;">"${text}"<br>- ${name} (${year})</p>`;
 }
 
+// currying
+
+curriedQuote = name => year => text => quote(name,year,text);
+
+const quoteCrockford = curriedQuote('Doug CrackFord');
+
+const quoteDijkstra = curriedQuote('Edsger Dijkstra')
+
+const quoteDijkstra75 = quoteDijkstra(1975)
 
 
 stillGrumpyQuotes = html`${[
