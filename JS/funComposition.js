@@ -18,3 +18,9 @@ var hypUp = (x) => exclaim(announce(adore(x)));
 
 console.log(hypUp('JS'));
 console.log(hypUp('FP'));
+
+// function composition exercise:-
+
+// Pipelining:--
+
+
