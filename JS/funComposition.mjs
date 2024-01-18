@@ -23,7 +23,7 @@ console.log(hypUp("FP"));
 // Pipelining:--
 
 // helper function import
-import { ArrLength, tail, head } from "../helperFunctions.mjs";
+import { ArrLength, tail, head,customReduce } from "../helperFunctions.mjs";
 
 function pipeline(...functions) {
   // agar koi function pass nahi kiya toh toh ye identity function return karega joh input wasie hi return kar dega.
@@ -51,19 +51,35 @@ const heart = (word) => "I ❤️ " + word;
 const exclaim2 = (sentence) => sentence + "!";
 
 // Example:-
-const showSomeLove = pipeline(pluralize,heart,exclaim2);
+const showSomeLove = pipeline(pluralize, heart, exclaim2);
 const loveSomeShow = pipeline(exclaim, heart, pluralize);
-const composedPipe = pipeline(pluralize, pipeline(heart, exclaim))
+const composedPipe = pipeline(pluralize, pipeline(heart, exclaim));
+const composedPipe2 = pipeline(pipeline(pluralize, heart), exclaim);
 
-const piplineLove = showSomeLove('pipeline')
-const functionLove = showSomeLove('pure function');
-const coffeeLove = showSomeLove('coffee break')
-const wrongOrder = loveSomeShow('pipeline')
-const compositionLove = composedPipe('composition') 
+const piplineLove = showSomeLove("pipeline");
+const functionLove = showSomeLove("pure function");
+const coffeeLove = showSomeLove("coffee break");
+const wrongOrder = loveSomeShow("pipeline");
+const compositionLove = composedPipe("composition");
+const compositionLove2 = composedPipe2("composition");
+
+
 // Logs:--
-
 console.log(piplineLove);
 console.log(functionLove);
 console.log(coffeeLove);
 console.log(wrongOrder);
 console.log(compositionLove);
+console.log(compositionLove2);
+
+
+
+//  Pipeline with reduce:--
+
+function reducePipeline(...functions){
+    return input => customReduce(functions,(acc,fn)=> fn(acc),input);
+}
+
+// Snake Charming:--
+
+
