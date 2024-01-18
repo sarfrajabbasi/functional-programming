@@ -82,4 +82,3 @@ function reducePipeline(...functions){
 
 // Snake Charming:--
 
-
