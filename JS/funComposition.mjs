@@ -23,7 +23,13 @@ console.log(hypUp("FP"));
 // Pipelining:--
 
 // helper function import
-import { ArrLength, tail, head,customReduce } from "../helperFunctions.mjs";
+import {
+  ArrLength,
+  tail,
+  head,
+  customReduce,
+  arrMaps,
+} from "../helperFunctions.mjs";
 
 function pipeline(...functions) {
   // agar koi function pass nahi kiya toh toh ye identity function return karega joh input wasie hi return kar dega.
@@ -63,7 +69,6 @@ const wrongOrder = loveSomeShow("pipeline");
 const compositionLove = composedPipe("composition");
 const compositionLove2 = composedPipe2("composition");
 
-
 // Logs:--
 console.log(piplineLove);
 console.log(functionLove);
@@ -72,13 +77,34 @@ console.log(wrongOrder);
 console.log(compositionLove);
 console.log(compositionLove2);
 
-
-
 //  Pipeline with reduce:--
 
-function reducePipeline(...functions){
-    return input => customReduce(functions,(acc,fn)=> fn(acc),input);
+function reducePipeline(...functions) {
+  return (input) => customReduce(functions, (acc, fn) => fn(acc), input);
 }
 
 // Snake Charming:--
 
+function desnake(snake_case_string) {
+  return snake_case_string.split("_");
+}
+
+function capitalizeFirstLetter(str) {
+  return str.chatAt(0).toUpperCase() + str.substr(1).toLowerCase();
+}
+
+function capitalizeAll(stringArray) {
+  return arrMaps(capitalizeFirstLetter, stringArray);
+}
+
+function camelize(strArr) {
+  return [head(strArr).concat(capitalizeAll(tail(strArr)))];
+}
+
+function concatentate(strArr) {
+  return customReduce((acc, str) => acc + str, "", strArr);
+}
+
+function hyphenate(strArr) {
+  return customReduce((acc, str) => [acc, str].join("-"));
+}
