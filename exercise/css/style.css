@@ -1,0 +1,21 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background:  linear-gradient(-68deg,#00f7ff,#ffffff) ;
+}
+
+.exercise{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+h1{
+    font-size: 5em;
+    font-family: monospace;
+    color: darkmagenta;
+}
