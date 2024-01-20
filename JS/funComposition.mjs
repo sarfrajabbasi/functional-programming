@@ -108,6 +108,10 @@ function Pascalize(strArr) {
     return PascalizeIt.join('')
   }
  
+function kebablize(strArr){
+  const kebab = strArr.join('-').toLowerCase();
+  return kebab
+}
 
 function concatentate(strArr) {
   return customReduce(strArr,(acc, str) => acc + str, "");
@@ -118,16 +122,25 @@ function hyphenate(strArr) {
 }
 
 
+function underscore(strArr){
+  return customReduce(tail(strArr),(acc,str)=> [acc,str].join("_"),head(strArr))
+}
+
 function snakeToCamel(snake_case_string) {
   const pipe = pipeline(desnake, camelize, concatentate);
 
   return pipe(snake_case_string);
 }
 
-const toPascalCase = (str) => str
-  .split(/\s+/)
-  .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
-  .join('');
+function screamLize(strArr){
+  const scream = arrMaps((e)=> e.toUpperCase(),strArr);
+  return scream
+}
+
+// const toPascalCase = (str) => str
+//   .split(/\s+/)
+//   .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+//   .join('');
 
 // Function to convert to kebab-case
 const toKebabCase = (str) => str
@@ -164,4 +177,18 @@ console.log(snakeToTrain('snake_case'));
 const snakeTOPascal = pipeline(desnake, capitalizeAll, Pascalize);
 
 console.log(snakeTOPascal('snake_case_asdsa'));
+
+//kebab-case
+const snakeTokebab = pipeline(desnake,kebablize)
+
 console.log(snakeTokebab('very_long_variables_should_also_work'));
+
+//SCREAMING_SNAKE_CASE
+const snakeToScream = pipeline(desnake,screamLize,underscore);
+
+console.log(snakeToScream('very_long_variables_should_also_work'));
+
+// SCREAMING-TRAIN-CASE
+const snakeToScreamTrain = pipeline(desnake,screamLize,hyphenate);
+
+console.log(snakeToScreamTrain('very_long_variables_should_also_work'));
