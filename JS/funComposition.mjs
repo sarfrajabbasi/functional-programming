@@ -15,8 +15,8 @@ var hypUp = (x) => exclaim(announce(adore(x)));
 
 */
 
-console.log(hypUp("JS"));
-console.log(hypUp("FP"));
+// console.log(hypUp("JS"));
+// console.log(hypUp("FP"));
 
 // function composition exercise:-
 
@@ -70,12 +70,12 @@ const compositionLove = composedPipe("composition");
 const compositionLove2 = composedPipe2("composition");
 
 // Logs:--
-console.log(piplineLove);
-console.log(functionLove);
-console.log(coffeeLove);
-console.log(wrongOrder);
-console.log(compositionLove);
-console.log(compositionLove2);
+// console.log(piplineLove);
+// console.log(functionLove);
+// console.log(coffeeLove);
+// console.log(wrongOrder);
+// console.log(compositionLove);
+// console.log(compositionLove2);
 
 //  Pipeline with reduce:--
 
@@ -87,7 +87,7 @@ function reducePipeline(...functions) {
 
 function desnake(snake_case_string) {
   const desnakeing = snake_case_string.split("_");
-//   console.log(desnakeing);
+  console.log(desnakeing);
   return desnakeing
 }
 
@@ -160,35 +160,36 @@ const toScreamingTrainCase = (str) => str
   .join('-')
   .toUpperCase();
 
-console.log(snakeToCamel("super_cool_variable"));
-console.log(snakeToCamel("very_long_variables_should_also_work"));
+// console.log(snakeToCamel("super_cool_variable"));
+// console.log(snakeToCamel("very_long_variables_should_also_work"));
 
-console.log(snakeToCamel("edgecase"));
+// console.log(snakeToCamel("edgecase"));
 
 
 // Challenge: Now, complete the snakeToTrain function below to reformat a string from snake_case to Train-Case. How many of the single-argument functions you used in snakeToCamel can you reuse? Which new ones do you need?
 
 const snakeToTrain = pipeline(desnake, capitalizeAll, hyphenate);
 
-console.log(snakeToTrain('snake_case'));
+// console.log(snakeToTrain('snake_case'));
 
 // Challenge: Write more functions to translate to more cases, e.g. PascalCase, kebab-case, SCREAMING_SNAKE_CASE, SCREAMING-TRAIN-CASE, etc. Try to use pipelining to reuse as much code as possible!
 
 const snakeTOPascal = pipeline(desnake, capitalizeAll, Pascalize);
 
-console.log(snakeTOPascal('snake_case_asdsa'));
+// console.log(snakeTOPascal('snake_case_asdsa'));
 
 //kebab-case
 const snakeTokebab = pipeline(desnake,kebablize)
 
-console.log(snakeTokebab('very_long_variables_should_also_work'));
+// console.log(snakeTokebab('very_long_variables_should_also_work'));
 
 //SCREAMING_SNAKE_CASE
 const snakeToScream = pipeline(desnake,screamLize,underscore);
 
-console.log(snakeToScream('very_long_variables_should_also_work'));
+// console.log(snakeToScream('very_long_variables_should_also_work'));
 
 // SCREAMING-TRAIN-CASE
 const snakeToScreamTrain = pipeline(desnake,screamLize,hyphenate);
 
-console.log(snakeToScreamTrain('very_long_variables_should_also_work'));
+// console.log(snakeToScreamTrain('very_long_variables_should_also_work'));
+
