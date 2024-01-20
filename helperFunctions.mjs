@@ -18,12 +18,13 @@ function head(arr) {
   
   // length
   function ArrLength(arr) {
-    let count = 0;
-    for (let _ of arr) {
-      count++;
-    }
+    // let count = 0;
+    // for (let _ of arr) {
+    //   count++;
+    // }
   
-    return count;
+    // return count;
+    return arr.length
   }
   function customReduce(array,callback,initialValue){
     // check if the array is not empty base case

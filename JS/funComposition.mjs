@@ -86,11 +86,13 @@ function reducePipeline(...functions) {
 // Snake Charming:--
 
 function desnake(snake_case_string) {
-  return snake_case_string.split("_");
+  const desnakeing = snake_case_string.split("_");
+//   console.log(desnakeing);
+  return desnakeing
 }
 
 function capitalizeFirstLetter(str) {
-  return str.chatAt(0).toUpperCase() + str.substr(1).toLowerCase();
+  return str.charAt(0).toUpperCase() + str.substr(1).toLowerCase();
 }
 
 function capitalizeAll(stringArray) {
@@ -98,13 +100,68 @@ function capitalizeAll(stringArray) {
 }
 
 function camelize(strArr) {
-  return [head(strArr).concat(capitalizeAll(tail(strArr)))];
+  const camelizeIt = [head(strArr)].concat(capitalizeAll(tail(strArr)));
+  return camelizeIt
 }
+function Pascalize(strArr) {
+    const PascalizeIt = capitalizeAll(strArr);
+    return PascalizeIt.join('')
+  }
+ 
 
 function concatentate(strArr) {
-  return customReduce((acc, str) => acc + str, "", strArr);
+  return customReduce(strArr,(acc, str) => acc + str, "");
 }
 
 function hyphenate(strArr) {
-  return customReduce((acc, str) => [acc, str].join("-"));
+  return customReduce(tail(strArr),(acc, str) => [acc, str].join("-"),head(strArr));
 }
+
+
+function snakeToCamel(snake_case_string) {
+  const pipe = pipeline(desnake, camelize, concatentate);
+
+  return pipe(snake_case_string);
+}
+
+const toPascalCase = (str) => str
+  .split(/\s+/)
+  .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+  .join('');
+
+// Function to convert to kebab-case
+const toKebabCase = (str) => str
+  .split(/\s+/)
+  .join('-')
+  .toLowerCase();
+
+// Function to convert to SCREAMING_SNAKE_CASE
+const toScreamingSnakeCase = (str) => str
+  .split(/\s+/)
+  .join('_')
+  .toUpperCase();
+
+// Function to convert to SCREAMING-TRAIN-CASE
+const toScreamingTrainCase = (str) => str
+  .split(/\s+/)
+  .join('-')
+  .toUpperCase();
+
+console.log(snakeToCamel("super_cool_variable"));
+console.log(snakeToCamel("very_long_variables_should_also_work"));
+
+console.log(snakeToCamel("edgecase"));
+
+
+// Challenge: Now, complete the snakeToTrain function below to reformat a string from snake_case to Train-Case. How many of the single-argument functions you used in snakeToCamel can you reuse? Which new ones do you need?
+
+const snakeToTrain = pipeline(desnake, capitalizeAll, hyphenate);
+
+console.log(snakeToTrain('snake_case'));
+
+// Challenge: Write more functions to translate to more cases, e.g. PascalCase, kebab-case, SCREAMING_SNAKE_CASE, SCREAMING-TRAIN-CASE, etc. Try to use pipelining to reuse as much code as possible!
+
+const snakeTOPascal = pipeline(desnake, capitalizeAll, Pascalize);
+
+console.log(snakeTOPascal('snake_case_asdsa'));
+console.log(snakeTokebab('very_long_variables_should_also_work'));
